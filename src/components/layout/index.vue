@@ -2,10 +2,12 @@
 <template>
   <div class="layout" v-loading="fullscreenLoading">
     <Layout :style="{minWidth:'800px'}">
-      <audio autoplay="autoplay"  loop="loop" preload="auto"
-            	src="../../assets/music/周深 - 大鱼.mp3">
-      		你的浏览器版本太低，不支持audio标签
-	</audio>
+      <audio
+        autoplay="autoplay"
+        loop="loop"
+        preload="auto"
+        src="../../assets/music/周深 - 大鱼.mp3"
+      >你的浏览器版本太低，不支持audio标签</audio>
       <Header>
         <Menu mode="horizontal" theme="dark">
           <router-link tag="div" to="/index/hone" class="layout-logo"></router-link>
@@ -44,7 +46,8 @@
       <Footer class="layout-footer-center">
         <!--  -->
         <div class="divone divfoot">
-          <div class="div-title">昊祺</div>A passionate frontend developer <br>按照自己的喜好去做，得不到别人的赞赏也没关系
+          <div class="div-title">昊祺</div>A passionate frontend developer
+          <br />按照自己的喜好去做，得不到别人的赞赏也没关系
         </div>
 
         <div class="divtwo divfoot">
@@ -52,10 +55,9 @@
 
           <ul class="adiv">
             <li>
-              <a href='https://weibo.com/575500730' target="_blank" class="weibo"></a>
+              <a href="https://weibo.com/575500730" target="_blank" class="weibo"></a>
             </li>
             <li>
-              
               <a href="javascript:;" class="dy"></a>
             </li>
             <li>
@@ -68,17 +70,16 @@
         </div>
 
         <div class="divthree divfoot">
-          <div class="div-title">联系我们</div>
-           如果您有优秀的文章希望和大家分享或其它业务需求，请您联系我们<br>
-          QQ:571892532 <br>
-          Email:liguiqiang626@163.com
+          <div class="div-title">联系我们</div>如果您有优秀的文章希望和大家分享或其它业务需求，请您联系我们
+          <br />QQ:571892532
+          <br />Email:liguiqiang626@163.com
         </div>
 
         <div class="divfour divfoot">
           <div class="div-title">友情链接</div>
-        <a href="https://cn.vuejs.org/" target="_blank" class="link">Vue官网</a>
-        <a href="http://sevnpeople.com;"  target="_blank" class="link">斯文人</a>
-        <!-- <a href="https://cn.vuejs.org/" target="_blank" class="link">Vue官网</a> -->
+          <a href="https://cn.vuejs.org/" target="_blank" class="link">Vue官网</a>
+          <a href="http://sevnpeople.com;" target="_blank" class="link">斯文人</a>
+          <a href="https://zeit.co" target="_blank" class="link">ZEIT.co</a>
         </div>
         <!--  -->
       </Footer>
@@ -87,8 +88,8 @@
   </div>
 </template>
 <script>
-import "iview/dist/styles/iview.css";
-import { getUserInfo, setUserInfo } from "utils/auth";
+import 'iview/dist/styles/iview.css'
+import { getUserInfo, setUserInfo } from 'utils/auth'
 import {
   Avatar,
   Layout,
@@ -103,84 +104,84 @@ import {
   BreadcrumbItem,
   Breadcrumb,
   Card
-} from "iview";
+} from 'iview'
 export default {
   data() {
     return {
       year: new Date().getFullYear(),
-      username: getUserInfo() || "昊祺",
+      username: getUserInfo() || '昊祺',
       isCollapsed: false,
       fullscreenLoading: false,
       fullscreen: false // 是否全屏
-    };
+    }
   },
   created() {
-    console.log("路由", this.$router.currentRoute.path);
+    console.log('路由', this.$router.currentRoute.path)
   },
   methods: {
     handleFullScreen() {
-      let element = document.documentElement;
+      let element = document.documentElement
       // 判断是否已经是全屏
       // 如果是全屏，退出
       if (this.fullscreen) {
         if (document.exitFullscreen) {
-          document.exitFullscreen();
+          document.exitFullscreen()
         } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
+          document.webkitCancelFullScreen()
         } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
+          document.mozCancelFullScreen()
         } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
+          document.msExitFullscreen()
         }
-        console.log("已还原！");
+        console.log('已还原！')
       } else {
         // 否则，进入全屏
         if (element.requestFullscreen) {
-          element.requestFullscreen();
+          element.requestFullscreen()
         } else if (element.webkitRequestFullScreen) {
-          element.webkitRequestFullScreen();
+          element.webkitRequestFullScreen()
         } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
+          element.mozRequestFullScreen()
         } else if (element.msRequestFullscreen) {
           // IE11
-          element.msRequestFullscreen();
+          element.msRequestFullscreen()
         }
-        console.log("已全屏！");
+        console.log('已全屏！')
       }
       // 改变当前全屏状态
-      this.fullscreen = !this.fullscreen;
+      this.fullscreen = !this.fullscreen
     },
     login() {
-      this.$confirm("此操作将退出登录, 是否继续?", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning"
+      this.$confirm('此操作将退出登录, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
       })
         .then(() => {
-          this.fullscreenLoading = true;
+          this.fullscreenLoading = true
           setTimeout(() => {
-            this.fullscreenLoading = false;
-          }, 2000);
+            this.fullscreenLoading = false
+          }, 2000)
 
           this.$message({
-            type: "success",
-            message: "退出成功,正在跳转中"
-          });
-          this.setCookie("admin_info", "", -1);
+            type: 'success',
+            message: '退出成功,正在跳转中'
+          })
+          this.setCookie('admin_info', '', -1)
         })
         .catch(() => {
-          console.log("取消");
-        });
+          console.log('取消')
+        })
     },
     //删除cookies
     setCookie(key, value, t) {
-      const _this = this;
-      var oDate = new Date();
-      oDate.setDate(oDate.getDate() + t);
-      document.cookie = key + "=" + value + "; expires=" + oDate.toDateString();
+      const _this = this
+      var oDate = new Date()
+      oDate.setDate(oDate.getDate() + t)
+      document.cookie = key + '=' + value + '; expires=' + oDate.toDateString()
       setTimeout(() => {
-        _this.$router.push("/login");
-      }, 1000);
+        _this.$router.push('/login')
+      }, 1000)
     }
   },
   components: {
@@ -198,7 +199,7 @@ export default {
     Submenu,
     Icon
   }
-};
+}
 </script>
 
 <style scoped>
@@ -211,7 +212,7 @@ export default {
 .layout-logo {
   width: 317px;
   height: 37px;
-  background: no-repeat url("../../assets/img/login-login.png") -19px -29px;
+  background: no-repeat url('../../assets/img/login-login.png') -19px -29px;
   border-radius: 3px;
   float: left;
   position: relative;
@@ -261,32 +262,32 @@ export default {
   height: 28px;
 }
 .adiv .weibo {
-  background: no-repeat url("../../assets/img/weibo.png");
+  background: no-repeat url('../../assets/img/weibo.png');
   transition: all 1s;
 }
 .adiv .weibo:hover {
-  background: no-repeat url("../../assets/img/weibo.png") 0 -38px;
+  background: no-repeat url('../../assets/img/weibo.png') 0 -38px;
 }
 .adiv .wechat {
-  background: no-repeat url("../../assets/img/wechat.png");
+  background: no-repeat url('../../assets/img/wechat.png');
   transition: all 1s;
 }
 .adiv .wechat:hover {
-  background: no-repeat url("../../assets/img/wechat.png") 0 -38px;
+  background: no-repeat url('../../assets/img/wechat.png') 0 -38px;
 }
 .adiv .qq {
-  background: no-repeat url("../../assets/img/qq.png");
+  background: no-repeat url('../../assets/img/qq.png');
   transition: all 1s;
 }
 .adiv .qq:hover {
-  background: no-repeat url("../../assets/img/qq.png") 0 -38px;
+  background: no-repeat url('../../assets/img/qq.png') 0 -38px;
 }
 .adiv .dy {
-  background: no-repeat url("../../assets/img/dy.png");
+  background: no-repeat url('../../assets/img/dy.png');
   transition: all 1s;
 }
 .adiv .dy:hover {
-  background: no-repeat url("../../assets/img/dy.png") 0 -38px;
+  background: no-repeat url('../../assets/img/dy.png') 0 -38px;
 }
 .divFooter {
   width: 100%;
@@ -303,18 +304,18 @@ export default {
 .el-avatar {
   vertical-align: middle;
 }
-.link{
-      font-size: 12px;
-    color: #e6e6e6;
-    text-decoration: none;
-    display: inline-block;
-    margin-right: 5%;
-    width: 40%;
-    cursor: pointer;
+.link {
+  padding-top: 2px;
+  font-size: 12px;
+  color: #e6e6e6;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5%;
+  width: 40%;
+  cursor: pointer;
 }
-.link:hover{
-    color: #0097a7;
-  
+.link:hover {
+  color: #0097a7;
 }
 .ivu-layout-header {
   padding: 0;

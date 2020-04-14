@@ -2,7 +2,6 @@ import * as home from '../api/home'
 import * as http from '../api/http.js'
 // import module from 'module'
 import Vue from 'vue'
-console.log("home", home)
 const ServerMixin = {
     Event: new Vue()
 }

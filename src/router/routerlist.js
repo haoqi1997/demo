@@ -82,16 +82,14 @@ const routes = [{
             },
             {
                 path: '*',
-                component: () =>
-                    import ('views/my/Error.vue')
+                redirect: '/index/hone'
             }
 
 
         ]
     }, {
         path: '*',
-        component: () =>
-            import ('views/my/Error.vue')
+        redirect: '/index/hone'
     }
 
 
