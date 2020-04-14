@@ -55,14 +55,15 @@ Vue.use(VueQuillEditor)
 const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
-    console.log("to.path", to.path)
-        //to当前的是登录
+    // console.log("to.path", to.path)
+    //to当前的是登录
     if (to.path.indexOf(whiteList) != -1) {
         const userInfo = getUserInfo()
 
         const fromPath = from.path
         if (userInfo == 'admin') {
             router.push(fromPath)
+
 
         } else {
             next()

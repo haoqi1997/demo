@@ -17,6 +17,7 @@ form,
 fieldset,
 legend,
 img {
+    touch-action: auto;
     margin: 0;
     padding: 0
 }

@@ -55,7 +55,7 @@
                       @input="handleInput(3)"
                     />
                   </div>
-                  <img :src="code" alt class="login-valid-img" @click="codeImg()" />
+                  <img :src="code" alt class="login-valid-img" @click="codeImg" />
                 </div>
                 <p>{{ message3 }}</p>
               </li>
@@ -86,8 +86,8 @@
 
 <script>
 // import utils from 'utils/auth'
-import utils from "utils";
-import { setUserInfo } from "utils/auth";
+import utils from 'utils'
+import { setUserInfo } from 'utils/auth'
 
 export default {
   data() {
@@ -102,61 +102,61 @@ export default {
       code: null,
       show: true,
       fullscreenLoading: false
-    };
+    }
   },
   created() {
-    this.codeImg();
+    this.codeImg()
     // console.log(apiPreBase)
-    let that = this;
+    let that = this
     document.onkeypress = function(e) {
-      var keycode = document.all ? event.keyCode : e.which;
+      var keycode = document.all ? event.keyCode : e.which
       if (keycode == 13) {
-        that.commit(); // 登录方法名
-        return false;
+        that.commit() // 登录方法名
+        return false
       }
-    };
+    }
   },
   methods: {
     commit() {
       // alert(4545)
       this.validate(valid => {
         if (valid) {
-          this.show = !this.show;
-          this.openFullScreen2();
+          this.show = !this.show
+          this.openFullScreen2()
           setTimeout(() => {
-            if ((this.userName && this.password) == "admin") {
-              setUserInfo(this.userName);
-              this.$router.push("/");
+            if ((this.userName && this.password) == 'admin') {
+              setUserInfo(this.userName)
+              this.$router.push('/')
             } else {
-              this.show = !this.show;
-              this.$message.error("账号 或 密码 错误,请重新输入");
+              this.show = !this.show
+              this.$message.error('账号 或 密码 错误,请重新输入')
             }
-          }, 2000);
+          }, 2000)
         }
-      });
+      })
     },
     //服务遮罩
     openFullScreen2() {
       const loading = this.$loading({
         lock: true,
-        text: "Loading...",
-        spinner: "el-icon-loading",
-        background: "rgba(0, 0, 0, 0.7)"
-      });
+        text: 'Loading...',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       setTimeout(() => {
-        loading.close();
-      }, 2000);
+        loading.close()
+      }, 2000)
     },
     // 表单验证
     validate(callback) {
       if (utils.isEmpty(this.userName)) {
-        this.message1 = "请输入账号";
+        this.message1 = '请输入账号'
       }
       if (utils.isEmpty(this.password)) {
-        this.message2 = "请输入密码";
+        this.message2 = '请输入密码'
       }
       if (utils.isEmpty(this.validateCode)) {
-        this.message3 = "请输入验证码";
+        this.message3 = '请输入验证码'
       }
       //
       if (
@@ -164,22 +164,22 @@ export default {
         !utils.isEmpty(this.password) &&
         !utils.isEmpty(this.validateCode)
       ) {
-        callback(true);
+        callback(true)
       } else {
-        callback(false);
+        callback(false)
       }
     },
     // 表单输入
     handleInput(num) {
-      this[`message${num}`] = null;
+      this[`message${num}`] = null
     },
     codeImg() {
-      console.log('apiPreBase')
-      this.code = `http://47.99.131.184:8118/apiBase/user/loginValidateCode?t=1585790514653`;
+      //   console.log('apiPreBase')
+      this.code = `http://47.99.131.184:8118/apiBase/user/loginValidateCode?t=1585790514653`
       // this.code = `${apiPreBase}user/loginValidateCode?t=${new Date().getTime()}`
     }
   }
-};
+}
 </script>
 <style>
 .transition-box {

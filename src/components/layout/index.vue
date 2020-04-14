@@ -116,7 +116,7 @@ export default {
     }
   },
   created() {
-    console.log('路由', this.$router.currentRoute.path)
+    // console.log('路由', this.$router.currentRoute.path)
   },
   methods: {
     handleFullScreen() {
