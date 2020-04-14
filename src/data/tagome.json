@@ -1,0 +1,22 @@
+{
+    "uesername": "admin",
+    "password": "123456",
+    "menu": [{
+            "name": "导航一",
+            "children": [{
+                "path": "/menutab",
+                "name": "Tab"
+            }]
+        },
+        {
+            "name": "导航三",
+            "children": [{
+                "path": "/progress",
+                "name": "Progress"
+            }, {
+                "path": "/form",
+                "name": "form"
+            }]
+        }
+    ]
+}

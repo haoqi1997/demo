@@ -1,0 +1,125 @@
+.login-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("../img/Starry.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login-main {
+    width: 450px;
+    overflow: hidden;
+    /* position: absolute;
+    top: 50%;
+    right: 50%; */
+    /* margin-top: -273px; */
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.login-header {
+    height: 90px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.38) url(../img/login-login.png) no-repeat center;
+    background-size: 80%;
+}
+
+.login-content {
+    padding: 35px 55px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.login-content li>div {
+    height: 35px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.login-content li>div input {
+    width: calc(100% - 60px);
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    vertical-align: middle;
+    outline: none;
+    font-family: 'Gudea', sans-serif;
+    color: rgb(200, 214, 225) !important;
+    background: rgba(57, 61, 82, 0);
+}
+
+.login-content li>div i {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 25px;
+    color: #c8c8c8;
+    vertical-align: middle;
+    line-height: 35px;
+}
+
+.login-content li p {
+    height: 35px;
+    padding-left: 30px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #ec2a17;
+}
+
+.login-valid-input {
+    display: flex;
+    justify-content: space-between;
+    background: none !important;
+}
+
+.login-valid-input>div {
+    width: 220px;
+}
+
+.login-valid-img {
+    width: 100px;
+    background: #fff;
+}
+
+.login-ext {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.login-ext * {
+    font-size: 16px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.login-ext input {
+    margin-right: 8px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 4px;
+    background: #00a2ff;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-copyright {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 25px;
+    font-size: 14px;
+    font-family: simsun;
+    text-align: center;
+    color: #fff;
+}
