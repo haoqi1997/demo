@@ -12,10 +12,10 @@ export default {
     }
   },
   created() {
-    this
+    // this.phonescoop()
   },
   methods: {
-    awai() {
+    phonescoop() {
       if (/(Android)/i.test(navigator.userAgent)) {
         // 判断是否为Android手机
         console.log('Android')
@@ -27,6 +27,9 @@ export default {
         this.offsetWid = document.documentElement.clientWidth
         this.offsetHei = document.documentElement.clientHeight
       }
+
+      console.log('data -> offsetWid', this.offsetWid)
+      console.log('data -> offsetHei', this.offsetHei)
     }
   }
 }
