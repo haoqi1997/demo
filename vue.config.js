@@ -30,6 +30,7 @@ module.exports = {
     lintOnSave: true, //关闭语法  http://m.maoyan.com
     //前端跨域
     devServer: {
+
         proxy: {
             "/ajax": {
                 target: "http://m.maoyan.com", //目标源
@@ -39,14 +40,12 @@ module.exports = {
                 target: "http://47.99.131.184:8118",
                 changeOrgin: true
             },
-            '/data': {
-                target: " http://localhost:8080",
-                changeOrgin: true
-            }
-        }
+        },
+
     },
 
-    // window.apiPreBase = '/apiBase/';
+
+
 
 
 

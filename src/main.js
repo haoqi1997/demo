@@ -36,7 +36,7 @@ Vue.use(ServerMixin)
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-    //引入editor
+    //引入editor//富文本
 import Vue2Editor from "vue2-editor";
 
 Vue.use(Vue2Editor);
